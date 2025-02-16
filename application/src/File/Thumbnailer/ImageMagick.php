@@ -66,7 +66,7 @@ class ImageMagick extends AbstractThumbnailer
             default:
                 $args = [
                     '+repage',
-		    '-quality 100',
+                    '-quality 100',
                     '-thumbnail ' . escapeshellarg(sprintf('%sx%s>', $constraint, $constraint)),
                 ];
         }
