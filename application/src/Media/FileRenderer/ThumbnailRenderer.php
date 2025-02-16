@@ -24,6 +24,10 @@ class ThumbnailRenderer extends AbstractRenderer
 
         $title = $media->displayTitle();
 
-        return sprintf('<a href="%s" title="%s">%s</a>', $view->escapeHtml($url), $view->escapeHtml($title), $img);
+        if (str_contains($url, ".pdf")) {
+           return sprintf('<a href="%s" title="%s">%s</a>', $view->escapeHtml($url), $view->escapeHtml($title), $img);
+	} else {
+           return sprintf($img, $view->escapeHtml($title));
+	}
     }
 }
